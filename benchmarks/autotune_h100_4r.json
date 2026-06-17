@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "platform": "NVIDIA H100 80GB HBM3",
+  "host": "sn4622120245",
+  "world_size": 4,
+  "dtype": "torch.bfloat16",
+  "generated_unix_ts": 1778858365,
+  "rules": [
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 268435456,
+      "config": {
+        "path": "fused",
+        "fused_num_channels": 32,
+        "fused_chunk_size": 524288
+      }
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 134217728,
+      "config": {
+        "path": "fused",
+        "fused_num_channels": 24,
+        "fused_chunk_size": 524288
+      },
+      "max_bytes": 268435455
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 67108864,
+      "config": {
+        "path": "fused",
+        "fused_num_channels": 32,
+        "fused_chunk_size": 524288
+      },
+      "max_bytes": 134217727
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 16777216,
+      "config": {
+        "path": "fused",
+        "fused_num_channels": 32,
+        "fused_chunk_size": 131072
+      },
+      "max_bytes": 67108863
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 4194304,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 24
+      },
+      "max_bytes": 16777215
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 1048576,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 48
+      },
+      "max_bytes": 4194303
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 262144,
+      "config": {
+        "path": "pipelined",
+        "pipeline_chunks": 2
+      },
+      "max_bytes": 1048575
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 16384,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 48
+      },
+      "max_bytes": 262143
+    },
+    {
+      "collective": "all2all",
+      "group_size": 4,
+      "min_bytes": 0,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 24
+      },
+      "max_bytes": 16383
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 67108864,
+      "config": {
+        "path": "copy_engine"
+      }
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 4194304,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 24
+      },
+      "max_bytes": 67108863
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 1048576,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 48
+      },
+      "max_bytes": 4194303
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 262144,
+      "config": {
+        "path": "pipelined",
+        "pipeline_chunks": 4
+      },
+      "max_bytes": 1048575
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 16384,
+      "config": {
+        "path": "vec_pull",
+        "copy_sms": 48
+      },
+      "max_bytes": 262143
+    },
+    {
+      "collective": "allgather",
+      "group_size": 4,
+      "min_bytes": 0,
+      "config": {
+        "path": "pipelined",
+        "pipeline_chunks": 2
+      },
+      "max_bytes": 16383
+    }
+  ]
+}
