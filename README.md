@@ -13,6 +13,13 @@ initial bootstrap handshake; it is **not** on any collective data path.
 See [`docs/design.md`](docs/design.md) for the maintained design overview, with
 the detailed design specs under `docs/specs/`.
 
+> `gfc` is the group-free collectives component of **GF-DiT** — *Scheduling
+> Parallelism for Diffusion Transformer Serving*
+> ([arXiv:2606.13501](https://arxiv.org/abs/2606.13501)). It provides the
+> low-overhead online formation and reconfiguration of arbitrary execution
+> groups that makes GF-DiT's elastic DiT serving practical. If you use `gfc`,
+> please cite the paper (see [Citation](#citation)).
+
 ## Quickstart
 
 ```python
@@ -161,3 +168,20 @@ torchrun --standalone --nproc_per_node=4 ...
   probe passes on the development hardware; on systems where it fails,
   initialising with `use_tma=True` raises `TMAUnsupportedError` (no silent
   fallback) and `use_tma=False` keeps everything working on the vec path.
+
+## Citation
+
+`gfc` is the group-free collectives component of GF-DiT. If you use it, please
+cite the paper:
+
+```bibtex
+@misc{qiang2026gfditschedulingparallelismdiffusion,
+      title={GF-DiT: Scheduling Parallelism for Diffusion Transformer Serving},
+      author={Xinwei Qiang and Yifan Hu and Shixuan Sun and Jing Yang and Han Zhao and Chen Chen and Yu Feng and Jingwen Leng and Minyi Guo},
+      year={2026},
+      eprint={2606.13501},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2606.13501},
+}
+```
