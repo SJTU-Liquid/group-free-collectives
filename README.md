@@ -161,7 +161,7 @@ torchrun --standalone --nproc_per_node=4 ...
 
 ## Hardware notes
 
-* Tested on 8× NVIDIA H100 80GB on NVLink P2P (SM 9.0).
+* Tested on 8× NVIDIA H20 on NVLink.
 * Software baseline (matches the spec): `torch==2.10.0+cu130`, `triton==3.6.0`,
   CUDA 13.0. The package itself only depends on `torch>=2.10` and `triton>=3.6`.
 * TMA over peer pointers is gated by `tma_probe.probe_tma_supported`. The
